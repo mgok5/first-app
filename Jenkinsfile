@@ -14,7 +14,9 @@ pipeline{
         stage('UNIT Testing'){
 
             steps{
-                sh 'mvn test'
+                if (isUnix()) --> sh "mvn test"
+
+                else --> bat "mvn test"
             }
         }
     }
