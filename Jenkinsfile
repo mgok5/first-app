@@ -10,5 +10,12 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/mgok5/first-app.git'
             }
         }
+
+        stage('UNIT Testing'){
+
+            steps{
+                sh 'mvn test'
+            }
+        }
     }
 }
